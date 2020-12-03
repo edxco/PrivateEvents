@@ -1,0 +1,20 @@
+<% if @user.errors.any? %>
+  <h2>The following errors prevented the article from being saved</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with scope: :user, url: users_path, local: true do |f| %>
+    <p>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %>
+    </p>
+    <p>
+        <%= f.submit 'Sign Up' %>
+    </p>
+<% end %>
+
+<%= link_to 'Cancel and return to event listing', events_path %>
