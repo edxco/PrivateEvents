@@ -1,9 +1,8 @@
-<h1>Event listing</h1>
+<h1>My events</h1>
 
 <table>
     <thead>
         <tr>
-            <th>Host</th>
             <th>Event</th>
             <th>Date</th>
             <th>Location</th>
@@ -13,9 +12,8 @@
 
 
 <tbody>
-<% @events.each do |event| %>
+<% @created_events.each do |event| %>
     <tr>
-        <td><%= event.user.username %></td>
         <td><%= event.title %></td>
         <td><%= event.date %></td>
         <td><%= event.location %></td>
@@ -29,4 +27,3 @@
 <p>
 <%= link_to 'Create a new Event', new_event_path %>
 </p>
-

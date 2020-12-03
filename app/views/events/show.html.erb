@@ -1,11 +1,4 @@
-<h1>Showing article details</h1>
-
-<p><strong>Title: </strong>
-<%= @event.title %>
-</p>
-<p><strong>Description: </strong>
-<%= @event.description %>
-</p> 
-
-<%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> | 
-<%= link_to 'Return to event listing', events_path %>
+<h1><%= @event.user.username %></h1>
+<p><%= @event.title %></p>
+<p><%= @event.location %></p>
+<p><%= @event.date %></p>

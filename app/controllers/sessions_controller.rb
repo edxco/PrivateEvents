@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         if user
             session[:user_id] = user.id
             flash[:notice] = "Welcome #{user.username}, to private events"
-            redirect_to events_path
+            redirect_to user_path(current_user)
         else
             flash.now[:alert] = "Failed to login. User not register"
             render 'new'

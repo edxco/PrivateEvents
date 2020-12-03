@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
     before_action :set_event, only: [:show, :destroy]
+    before_action :require_user, except: [:show, :index]
 
     def show
+        @event = Event.find(params[:id])
     end
 
     def index
@@ -13,7 +15,8 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = Event.new(event_params)
+        @event = current_user.events.build(event_params)
+        @event.user = current_user
         if @event.save
             flash[:notice] = "Event was created succesfully"
             redirect_to events_path
@@ -24,7 +27,7 @@ class EventsController < ApplicationController
 
     def destroy
         @event.destroy
-        redirect_to events_path
+        redirect_to user_path(current_user)
     end
 
     private
@@ -34,7 +37,7 @@ class EventsController < ApplicationController
     end
 
     def event_params
-        params.require(:event).permit(:title, :description)
+        params.require(:event).permit(:title, :date, :location)
     end
 
 end

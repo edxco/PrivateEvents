@@ -9,6 +9,11 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
+    def show
+        @created_events = current_user.events
+        @user = User.find(params[:id])
+    end
+
     def create
         @user = User.new(user_params)
         if @user.save
