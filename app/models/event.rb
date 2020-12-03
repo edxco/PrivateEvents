@@ -4,4 +4,5 @@ class Event < ApplicationRecord
     validates :location, presence: true
 
     belongs_to :user
+    has_many :attendees
 end
