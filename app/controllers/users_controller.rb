@@ -12,8 +12,9 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            flash[:notice] = "Welcome #{user.username}, to private events"
-            redirect_to users_path
+            session[:user_id] = @user.id
+            flash[:notice] = "Welcome #{@user.username}, to private events"
+            redirect_to events_path
         else
             render 'new'
         end
