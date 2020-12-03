@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            flash[:notice] = "User was created succesfully"
+            flash[:notice] = "Welcome #{user.username}, to private events"
             redirect_to users_path
         else
             render 'new'
