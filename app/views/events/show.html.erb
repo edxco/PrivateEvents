@@ -9,8 +9,15 @@
     <p class="text-lg text-gray-800"><%= @event.date %></p>
 
     <p class="text-lg text-green-600 font-bold mt-5">The following members will attend</p>
-    <p class="text-lg text-gray-800"><%= @attendee.user %></p>
+    <p class="text-lg text-gray-800">
 
     <%= render 'attendEvent' %>
+
+    <% @event.user_attendee.each do |a| %>
+        <%= a.username%>
+    <% end %> 
+    </p>
+
+    
 
 </div>

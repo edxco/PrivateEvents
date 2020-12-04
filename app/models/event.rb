@@ -5,4 +5,5 @@ class Event < ApplicationRecord
 
     belongs_to :user
     has_many :attendees
+    has_many :user_attendee, through: :attendees, source: :user
 end
