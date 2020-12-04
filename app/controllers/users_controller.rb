@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:notice] = "Welcome #{@user.username}, to private events"
-            redirect_to events_path
+            redirect_to user_path(current_user.id)
         else
             render 'new'
         end

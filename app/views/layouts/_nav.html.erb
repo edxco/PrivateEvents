@@ -12,24 +12,29 @@
                             <a href="#"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
-                            <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Events</a>
+                            <p
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <%= link_to 'All events', events_path %>
+                            </p>
 
                             <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Events</a>
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My
+                                Events</a>
 
-                            <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">New Event</a>
+                            <p
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <%= link_to 'New Event', new_event_path %>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="ml-4 flex items-center md:ml-6">
                         <% if logged_in? %>
-                            <p class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"">
+                        <p class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"">
                         <%= link_to 'Log Out', logout_path, method: :delete %> 
                         </p>
-                        <p class="bg-gray-800 p-1 text-gray-400">
+                        <p class=" bg-gray-800 p-1 text-gray-400">
                             <!-- Heroicon name: user -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" aria-hidden="true">
@@ -38,15 +43,17 @@
                             </svg>
                         </p>
                         <p class="text-gray-300 text-lg">
-                        Signed as: <span class="font-bold text-green-500"><%= current_user.username.upcase %></span>
+                            Signed as: <span class="font-bold text-green-500"><%= current_user.username.upcase %></span>
                         </p>
-                        
+
                         <% else %>
-                        <p class="text-white mr-3 px-3 py-2 rounded-md text-sm font-medium bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <%= link_to 'LOGIN', login_path %>
+                        <p
+                            class="text-white mr-3 px-3 py-2 rounded-md text-sm font-medium bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <%= link_to 'LOGIN', login_path %>
                         </p>
-                        <p class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <%= link_to 'REGISTER', signup_path %>
+                        <p
+                            class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <%= link_to 'REGISTER', signup_path %>
                         </p>
                         <% end %>
 
