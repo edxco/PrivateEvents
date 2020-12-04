@@ -1,10 +1,62 @@
-<% if logged_in? %>
-    <%= link_to 'Log Out', logout_path, method: :delete %> | 
-    <h3><%= current_user.username %></h3>
-<% else %>
-    <%= link_to 'Log In', login_path %> | 
-    <%= link_to 'Sign Up', signup_path %>
-<% end %>
+<div>
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                            alt="Workflow">
+                    </div>
+                    <div>
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Events</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Events</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">New Event</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <% if logged_in? %>
+                            <p class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"">
+                        <%= link_to 'Log Out', logout_path, method: :delete %> 
+                        </p>
+                        <p class="bg-gray-800 p-1 text-gray-400">
+                            <!-- Heroicon name: user -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </p>
+                        <p class="text-gray-300 text-lg">
+                        Signed as: <span class="font-bold text-green-500"><%= current_user.username.upcase %></span>
+                        </p>
+                        
+                        <% else %>
+                        <p class="text-white mr-3 px-3 py-2 rounded-md text-sm font-medium bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <%= link_to 'LOGIN', login_path %>
+                        </p>
+                        <p class="bg-gray-900 text-white mr-3 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <%= link_to 'REGISTER', signup_path %>
+                        </p>
+                        <% end %>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
-
+</div>
+</nav>
+</div>
