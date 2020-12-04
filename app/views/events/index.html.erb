@@ -54,6 +54,8 @@
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <p class="text-indigo-600 hover:text-indigo-900">
                   <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <p class="text-indigo-600 hover:text-indigo-900">
+                  <%= link_to 'View Event', event_path(event)%></p>
               </td>
             </tr>
 
