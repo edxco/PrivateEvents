@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Events', type: :request do
-
   describe 'GET /new' do
     it 'redirects to sign in if not signed' do
       get '/events/new'
