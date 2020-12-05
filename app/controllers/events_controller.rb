@@ -7,7 +7,8 @@ class EventsController < ApplicationController
     end
 
     def index
-        @events = Event.all
+        @upcoming = Event.upcoming.sort { |a, b| b.date <=> a.date }
+        @past = Event.past.sort { |a, b| b.date <=> a.date }
     end
 
     def new
