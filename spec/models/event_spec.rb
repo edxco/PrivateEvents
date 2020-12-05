@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Event, type: :model do
   describe 'title presence' do
-  	it 'if title present' do
+    it 'if title present' do
       u = Event.new
       u.title = 'user'
       u.valid?

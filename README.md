@@ -4,6 +4,8 @@
 
 > The project ensures a many-to-many association between Users, Events and Attendances of users to an event. This was achieved through the use of validations, source, through, foreign keys and class name to bring about the active record association supported by rails.
 
+![screenshot](./screenshot.png)
+
 ## Built With
 
 - Ruby
