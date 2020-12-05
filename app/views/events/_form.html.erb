@@ -10,7 +10,7 @@
     <% if @event.errors.any? %>
     <div class="bg-yellow-200 p-5 text-gray-500">
       <span class="closebtn font-extrabold text-3xl" onclick="this.parentElement.style.display='none';">&times;</span>
-      <p class="text-red-500">Cannot created event because:</p>
+      <p class="text-red-500">Cannot create event because:</p>
       <ul class="ml-8">
         <% @event.errors.full_messages.each do |msg| %>
         <li class="list-disc"><%= msg %></li>
