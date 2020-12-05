@@ -33,9 +33,9 @@ To get a local copy up and running, follow the steps below.
 - Enjoy the App and its functionalities!
 
 
-# Authors
+## Authors
 
-## Author1
+### Author 1
 
 👤 **Roy Mukuye**
 
@@ -43,7 +43,7 @@ To get a local copy up and running, follow the steps below.
 - Twitter: [@Roymkenya](https://twitter.com/Roymkenya)
 - LinkedIn: [Roy Mukuye](https://www.linkedin.com/in/roy-mukuye-42b07b1b4)
 
-## Author2
+### Author 2
 
 👤 **Eduardo Baeza**
 
