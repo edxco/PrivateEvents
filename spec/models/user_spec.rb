@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.new
+  describe 'username presence' do
+    it 'if username not present' do
+      u = User.new
+      u.username = ''
+      u.valid?
+      expect(u.errors[:username]).to include("can't be blank")
+    end
 
-  it 'is valid when the name is present' do
-    user.name = 'User1'
-    expect(user).to be_valid
-  end
-
-  it 'is valid when name is present' do
-    user.name = nil
-    expect(user).to_not be_valid
+    it 'if username present' do
+      u = User.new
+      u.username = 'user'
+      u.valid?
+      expect(u.errors[:username]).to_not include("can't be blank")
+    end
   end
 end
