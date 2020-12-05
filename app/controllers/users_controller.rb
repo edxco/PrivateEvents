@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     def show
         @created_events = current_user.events
         @user = User.find(params[:id])
+        @event = Event.find(params[:id])
     end
 
     def create
