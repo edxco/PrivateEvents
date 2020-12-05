@@ -9,13 +9,13 @@
 ## Built With
 
 - Ruby
-- Rails
+- Ruby on Rails
 - HTML 5
 - Tailwind CSS
 - Rubocop
 - Rspec
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow the steps below.
 
 ## Prerequisites
 
@@ -25,6 +25,7 @@ To get a local copy up and running follow these simple example steps.
 - `cd` into the project directory; `cd PrivateEvents`
 - Install tailwinds 1.9.6 `npm i tailwindcss@1.9.6`
 - Run `bundle install` to install the necessary gems;
+- Run `yarn install --check files`.
 - Run `rails db:migrate` to create your database columns;
 - Run `rails s` to start a server in your computer;
 - In your browser address, type the following URL: [localhost:3000](localhost:3000);
