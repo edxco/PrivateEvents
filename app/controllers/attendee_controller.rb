@@ -5,7 +5,8 @@ class AttendeeController < ApplicationController
       redirect_to user_path(current_user.id)
     # redirect_back(fallback_location: event_path(attendee_params[:event_id]))
     else
-      render 'create'
+      flash[:notice] = "There was an error, please try assist again"
+      redirect_to event_path(attendee_params[:event_id])
     end
   end
 

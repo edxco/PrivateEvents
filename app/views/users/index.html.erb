@@ -1,30 +1,9 @@
-<h1>User listing</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-        </tr>
-    </thead>
-
-
-<tbody>
-<% @users.each do |user| %>
-    <tr>
-        <td><%= user.username %></td>
-        <td>
-        <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-    </tr>
-<% end %>
-</tbody>
-</table>
-<p>
-<% if logged_in? %>
-    <%= link_to 'Log Out', logout_path, method: :delete %>
-    <h3><%= current_user.username %></h3>
+<img class="mx-auto h-12 w-auto mt-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+  alt="Workflow">
+<h2 class="mt-6 mb-9 text-center font-light text-3xl text-gray-900">
+<% if logged_in? %> 
+  Events for <span class="font-extrabold"><%= current_user.username %></span>
 <% else %>
-    <%= link_to 'Create a new user', new_user_path %>
+  Please <%= link_to 'Register', signup_path, class: "underline hover:no-underline" %> or <span class="font-extrabold">
+  <%= link_to 'Login', login_path, class: "underline hover:no-underline" %></span>
 <% end %>
-
-</p>

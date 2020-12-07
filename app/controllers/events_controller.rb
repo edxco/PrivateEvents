@@ -5,6 +5,9 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendee = Attendee.new
+    
+    @events_past = Event.past.order('datetime DESC')
+    @events_future = Event.upcoming.order('datetime ASC')
   end
 
   def index
