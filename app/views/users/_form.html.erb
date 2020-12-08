@@ -27,7 +27,7 @@
       </ul>
     </div>
     <% end %>
-    <%= form_with scope: :user, url: users_path, local: true do |f| %>
+    <%= form_with scope: :user, url: users_path, local: true, html: { class: "register-form" } do |f| %>
 
     <div class="rounded-md shadow-sm -space-y-px">
       <div>

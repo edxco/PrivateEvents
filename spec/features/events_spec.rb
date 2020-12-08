@@ -9,7 +9,6 @@ RSpec.describe 'Event', type: :feature do
     fill_in 'title', with: 'Test event A'
     fill_in 'date', with: Date.current
     fill_in 'location', with: 'Location 1'
-    fill_in 'event_date', with: Date.current
 
     find("input[type='submit']").click
     expect(page).to have_content(/Event created!/i)

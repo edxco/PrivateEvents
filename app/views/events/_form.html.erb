@@ -19,7 +19,7 @@
     </div>
     <% end %>
 
-    <%= form_with scope: :event, url: events_path, local: true do |f| %>
+    <%= form_with scope: :event, url: events_path, local: true, html: { class: "event-form" } do |f| %>
       
       <div class="rounded-md shadow-sm -space-y-px mb-9">
       <div>
