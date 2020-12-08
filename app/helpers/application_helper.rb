@@ -3,9 +3,9 @@ module ApplicationHelper
     return render inline: "<%= link_to 'Login to assist', login_path%>" unless logged_in?
 
     if Attendee.where(user_id: user, event_id: event).any?
-      render './events/unattendEvent'
+      render '/events/unattendEvent'
     else
-      render './events/attendEvent'
+      render '/events/attendEvent'
     end
   end
 

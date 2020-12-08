@@ -1,7 +1,9 @@
-<%= form_with model: @attendee, method: :delete, url: attendee_path do |f| %>
+Not attend
+<% if false %>
+     form_with model: @attendee, method: :delete, url: attendee_path do |f| %>
 
     <%= f.hidden_field :event_id, :value => params[:id] %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => current_user[:id] %>
     
     <%= f.submit "Not Attend", class: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"%>
     
