@@ -64,6 +64,9 @@
               <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></p>
               <p class="text-green-600 hover:text-green-900">
               <%= link_to 'Attendees', event_path(event)%></p>
+              <p>
+                <%= attendance_show(@user.authored_events) %>
+                </p>
               </td>
             </tr>
 
@@ -127,6 +130,7 @@
                 <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <p class="text-green-600 hover:text-green-900">
                 <%= link_to 'Attendees', event_path(event)%></p>
+                
                 <p><%= link_to 'Not Attend', attendee_path(attendee: { user_id: current_user.id, event_id: event.id }),
                 method: :delete, class: 'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800' %></p>
                 
