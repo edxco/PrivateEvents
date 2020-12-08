@@ -5,9 +5,14 @@ class AttendeeController < ApplicationController
       redirect_to user_path(current_user.id)
     # redirect_back(fallback_location: event_path(attendee_params[:event_id]))
     else
-      flash[:notice] = "There was an error, please try assist again"
-      redirect_to event_path(attendee_params[:event_id])
+      flash[:notice] = 'You are already attending'
+      redirect_to events_path
     end
+  end
+
+  def destroy
+    @attendee = Attendee.find_by(user_id: attendee_params[:user_id])
+    redirect_to user_path(current_user) if @attendee.destroy
   end
 
   private

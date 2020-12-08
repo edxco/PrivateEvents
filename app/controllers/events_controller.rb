@@ -3,9 +3,7 @@ class EventsController < ApplicationController
   before_action :require_user, except: %i[show index]
 
   def show
-    @event = Event.find(params[:id])
     @attendee = Attendee.new
-    
     @events_past = Event.past.order('datetime DESC')
     @events_future = Event.upcoming.order('datetime ASC')
   end
@@ -13,6 +11,8 @@ class EventsController < ApplicationController
   def index
     @upcoming = Event.upcoming.sort { |a, b| b.date <=> a.date }
     @past = Event.past.sort { |a, b| b.date <=> a.date }
+    @all_events = Event.all
+    @attendee = Attendee.new
   end
 
   def new
