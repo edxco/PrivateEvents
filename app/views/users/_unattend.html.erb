@@ -1,0 +1,2 @@
+<%= link_to 'Unassist', attendee_path(attendee: { user_id: current_user[:id], event_id: event.id }), 
+            method: :delete, class: 'badge badge-danger' %>

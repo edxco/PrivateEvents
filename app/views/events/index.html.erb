@@ -1,0 +1,137 @@
+<img class="mx-auto h-12 w-auto mt-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+  alt="Workflow">
+
+<h2 class="mt-6 mb-9 text-center text-3xl font-extrabold text-gray-900">
+  Future Events
+</h2>
+<div class="flex flex-col">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                HOST
+              </th>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                EVENT
+              </th>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                LOCATION
+              </th>
+              <th scope="col" class="px-6 py-3 bg-gray-50">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <% @upcoming.each do |event| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div>
+                    <div class="text-sm text-green-700">
+                      <p class="font-extrabold"><%= event.user.username.upcase %></p>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      <%= event.date %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900"><%= event.title %></div>
+                <div class="text-sm text-gray-500">Attendees: </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  <%= event.location %>
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <p class="text-indigo-600 hover:text-indigo-900">
+                  <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <p class="text-indigo-600 hover:text-indigo-900">
+                  <%= link_to 'View Event', event_path(event)%></p>
+                <p><%= attendance_user(current_user, event) %></p>
+              </td>
+            </tr>
+            
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-6 mb-9 text-center text-3xl font-extrabold text-gray-500">
+  Past Events
+</h2>
+<div class="flex flex-col">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                HOST
+              </th>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                EVENT
+              </th>
+              <th scope="col"
+                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                LOCATION
+              </th>
+              <th scope="col" class="px-6 py-3 bg-gray-50">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <% @past.each do |event| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div>
+                    <div class="text-sm text-green-400">
+                      <p class="font-extrabold"><%= event.user.username.upcase %></p>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      <%= event.date %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-400"><%= event.title %></div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  <%= event.location %>
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <p class="text-indigo-400 hover:text-indigo-600">
+                  <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <p class="text-indigo-400 hover:text-indigo-600">
+                  <%= link_to 'View Event', event_path(event)%></p>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

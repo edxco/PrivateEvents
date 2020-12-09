@@ -1,0 +1,5 @@
+<% if logged_in? %>
+<%= render 'form' %>
+<% else %>
+<%controller.redirect_to login_path %>
+<% end %>

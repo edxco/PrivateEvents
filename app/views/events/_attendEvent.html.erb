@@ -1,0 +1,8 @@
+<%= form_with model: @attendee, method: :post, url: attendee_index_path, local: true do |f| %>
+
+<%= f.hidden_field :event_id, :value => params[:id] %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<%= f.submit "Attend", class: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"%>
+
+<% end %>

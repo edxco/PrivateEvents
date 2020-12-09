@@ -1,0 +1,9 @@
+<img class="mx-auto h-12 w-auto mt-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+  alt="Workflow">
+<h2 class="mt-6 mb-9 text-center font-light text-3xl text-gray-900">
+<% if logged_in? %> 
+  Events for <span class="font-extrabold"><%= current_user.username %></span>
+<% else %>
+  Please <%= link_to 'Register', signup_path, class: "underline hover:no-underline" %> or <span class="font-extrabold">
+  <%= link_to 'Login', login_path, class: "underline hover:no-underline" %></span>
+<% end %>

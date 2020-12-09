@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvents</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>PrivateEvents</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="bg-gray-50">
+
+  <%= render 'layouts/nav' %>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <%= render 'layouts/msg' %>
+
     <%= yield %>
-  </body>
+
+  </div>
+
+</body>
+
 </html>
